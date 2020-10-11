@@ -1,0 +1,74 @@
+This is an example call.
+
+\Users\...\NLP>python preprocessing.py --help
+usage: preprocessing.py [-h] [-i INPUTFILE] [-s {0,1}] [-p {y,n}] [-n {default,base,token}] [-w {y,n}]
+                        [-o OUTPUTFOLDER]
+
+Preprocessing tool
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i INPUTFILE, --inputFile INPUTFILE
+                        path to input file
+  -s {0,1}, --status {0,1}
+                        0: from scratch, 1: without cleansing
+  -p {y,n}, --punctuation {y,n}
+                        y: delete punctuation, n: otherwise
+  -n {default,base,token}, --numbers {default,base,token}
+                        default: no action, base: all numbers in same base, token: replace all numbers with NUMBER
+  -w {y,n}, --stopWords {y,n}
+                        y: delete punction, n: otherwise
+  -o OUTPUTFOLDER, --outputFolder OUTPUTFOLDER
+                        path to output folder, default to directory of input file
+
+
+
+\Users\...\NLP>python preprocessing.py -i example_Preprocessing.csv -s 0 -p y -n default -w y -o output
+
+--inputFile:     example_Preprocessing.csv
+--status:        0
+--punctuation:   y
+--numbers:       default
+--stopWords:     y
+--outputFolder:  \Users\...\NLP\output
+
+Strings in example_Preprocessing.csv were preprocessed and stored in \Users\...\NLP\output\example_Preprocessing-s_0-p_y-n_default-w_y.csv
+
+
+
+\Users\...\NLP>python preprocessing.py -i example_Preprocessing.csv -s 0 -p y -n base -w y -o output
+
+--inputFile:     example_Preprocessing.csv
+--status:        0
+--punctuation:   y
+--numbers:       base
+--stopWords:     y
+--outputFolder:  \Users\...\NLP\output
+
+Strings in example_Preprocessing.csv were preprocessed and stored in \Users\...\NLP\output\example_Preprocessing-s_0-p_y-n_base-w_y.csv
+
+
+
+\Users\...\NLP>python preprocessing.py -i example_Preprocessing.csv -s 0 -p y -n token -w y -o output
+
+--inputFile:     example_Preprocessing.csv
+--status:        0
+--punctuation:   y
+--numbers:       token
+--stopWords:     y
+--outputFolder:  \Users\...\NLP\output
+
+Strings in example_Preprocessing.csv were preprocessed and stored in \Users\...\NLP\output\example_Preprocessing-s_0-p_y-n_token-w_y.csv
+
+
+
+(\Users\...\NLP\>python preprocessing.py -i example_Preprocessing.csv -s 1 -p y -n base -w y -o output
+
+--inputFile:     example_Preprocessing.csv
+--status:        1
+--punctuation:   y
+--numbers:       base
+--stopWords:     y
+--outputFolder:  \Users\...\NLP\output
+
+Strings in example_Preprocessing.csv were preprocessed and stored in \Users\...\NLP\output\example_Preprocessing-s_1-p_y-n_base-w_y.csv
